@@ -274,76 +274,7 @@ public enum NVActivityIndicatorType: CaseIterable {
 
     // swiftlint:disable:next cyclomatic_complexity function_body_length
     func animation() -> NVActivityIndicatorAnimationDelegate {
-        switch self {
-        case .blank:
-            return NVActivityIndicatorAnimationBlank()
-        case .ballPulse:
-            return NVActivityIndicatorAnimationBallPulse()
-        case .ballGridPulse:
-            return NVActivityIndicatorAnimationBallGridPulse()
-        case .ballClipRotate:
-            return NVActivityIndicatorAnimationBallClipRotate()
-        case .squareSpin:
-            return NVActivityIndicatorAnimationSquareSpin()
-        case .ballClipRotatePulse:
-            return NVActivityIndicatorAnimationBallClipRotatePulse()
-        case .ballClipRotateMultiple:
-            return NVActivityIndicatorAnimationBallClipRotateMultiple()
-        case .ballPulseRise:
-            return NVActivityIndicatorAnimationBallPulseRise()
-        case .ballRotate:
-            return NVActivityIndicatorAnimationBallRotate()
-        case .cubeTransition:
-            return NVActivityIndicatorAnimationCubeTransition()
-        case .ballZigZag:
-            return NVActivityIndicatorAnimationBallZigZag()
-        case .ballZigZagDeflect:
-            return NVActivityIndicatorAnimationBallZigZagDeflect()
-        case .ballTrianglePath:
-            return NVActivityIndicatorAnimationBallTrianglePath()
-        case .ballScale:
-            return NVActivityIndicatorAnimationBallScale()
-        case .lineScale:
-            return NVActivityIndicatorAnimationLineScale()
-        case .lineScaleParty:
-            return NVActivityIndicatorAnimationLineScaleParty()
-        case .ballScaleMultiple:
-            return NVActivityIndicatorAnimationBallScaleMultiple()
-        case .ballPulseSync:
-            return NVActivityIndicatorAnimationBallPulseSync()
-        case .ballBeat:
-            return NVActivityIndicatorAnimationBallBeat()
-        case .ballDoubleBounce:
-            return NVActivityIndicatorAnimationBallDoubleBounce()
-        case .lineScalePulseOut:
-            return NVActivityIndicatorAnimationLineScalePulseOut()
-        case .lineScalePulseOutRapid:
-            return NVActivityIndicatorAnimationLineScalePulseOutRapid()
-        case .ballScaleRipple:
-            return NVActivityIndicatorAnimationBallScaleRipple()
-        case .ballScaleRippleMultiple:
-            return NVActivityIndicatorAnimationBallScaleRippleMultiple()
-        case .ballSpinFadeLoader:
-            return NVActivityIndicatorAnimationBallSpinFadeLoader()
-        case .lineSpinFadeLoader:
-            return NVActivityIndicatorAnimationLineSpinFadeLoader()
-        case .triangleSkewSpin:
-            return NVActivityIndicatorAnimationTriangleSkewSpin()
-        case .pacman:
-            return NVActivityIndicatorAnimationPacman()
-        case .ballGridBeat:
-            return NVActivityIndicatorAnimationBallGridBeat()
-        case .semiCircleSpin:
-            return NVActivityIndicatorAnimationSemiCircleSpin()
-        case .ballRotateChase:
-            return NVActivityIndicatorAnimationBallRotateChase()
-        case .orbit:
-            return NVActivityIndicatorAnimationOrbit()
-        case .audioEqualizer:
-            return NVActivityIndicatorAnimationAudioEqualizer()
-        case .circleStrokeSpin:
-            return NVActivityIndicatorAnimationCircleStrokeSpin()
-        }
+        return NVActivityIndicatorAnimationBallScaleMultiple()
     }
 }
 
@@ -472,11 +403,11 @@ public final class NVActivityIndicatorView: UIView {
 
      - returns: The activity indicator view.
      */
-    public init(frame: CGRect, type: NVActivityIndicatorType? = nil, color: UIColor? = nil, padding: CGFloat? = nil) {
+    public init(frame: CGRect? = nil, type: NVActivityIndicatorType? = nil, color: UIColor? = nil, padding: CGFloat? = nil) {
         self.type = type ?? NVActivityIndicatorView.DEFAULT_TYPE
         self.color = color ?? NVActivityIndicatorView.DEFAULT_COLOR
         self.padding = padding ?? NVActivityIndicatorView.DEFAULT_PADDING
-        super.init(frame: frame)
+        super.init(frame: frame ?? .zero)
         isHidden = true
     }
 
